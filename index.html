@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Baireslot - Bonificación +100%</title>
+  <meta name="description" content="Casino online legal con +100% de bonificación. Juegos seguros, atención por WhatsApp, solo para mayores de edad.">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Orbitron', sans-serif;
+      background: linear-gradient(to bottom, #000000, #1a1a1a);
+      color: white;
+      text-align: center;
+    }
+
+    .hero {
+      background: url('https://images.unsplash.com/photo-1615058064645-664b19e0b2e1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80') no-repeat center center;
+      background-size: cover;
+      padding: 40px 20px 40px;
+      position: relative;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero img.logo {
+      width: 120px;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      color: #FFD700;
+      margin: 10px 0;
+    }
+
+    .timer {
+      font-size: 1.2rem;
+      margin-bottom: 25px;
+    }
+
+    .btn {
+      background: #00ff00;
+      color: black;
+      padding: 15px 30px;
+      font-size: 1.2rem;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background: #00cc00;
+    }
+
+    footer {
+      background: #111;
+      padding: 30px 15px;
+      font-size: 0.9rem;
+      color: #ccc;
+    }
+
+    footer strong {
+      color: #fff;
+    }
+
+    .trust {
+      margin-top: 30px;
+      font-size: 0.95rem;
+      color: #aaa;
+    }
+  </style>
+</head>
+<body>
+  <div class="hero">
+    <div class="hero-content">
+      <img src="https://cdn-icons-png.flaticon.com/512/679/679721.png" alt="Logo Baireslot" class="logo" />
+      <h1>Baireslot - ¡Recibí +100% de Bono!</h1>
+      <div class="timer">
+        ⏳ Bono disponible por: <span id="timer">30m 00s</span>
+      </div>
+      <button class="btn" id="ctaBtn">¡Quiero mi bono!</button>
+      <div class="trust">
+        ✅ Atención por WhatsApp | 🔒 100% Seguro | 🔞 Solo +18
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    Juego responsable. Prohibido para menores de <strong>18 años</strong>.<br>
+    Atención personalizada vía WhatsApp. Todas las operaciones son legales y seguras.<br>
+    © 2025 Baireslot. Todos los derechos reservados.
+  </footer>
+
+  <!-- Meta Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '586211574290931');
+    fbq('track', 'PageView');
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=586211574290931&ev=PageView&noscript=1" />
+  </noscript>
+
+  <!-- FUNCIONALIDAD -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Cuenta regresiva
+      let duration = 30 * 60;
+      const timerElement = document.getElementById("timer");
+      const countdown = () => {
+        const minutes = Math.floor(duration / 60);
+        const seconds = duration % 60;
+        timerElement.textContent = `${minutes}m ${seconds < 10 ? "0" : ""}${seconds}s`;
+        if (duration > 0) duration--;
+      };
+      setInterval(countdown, 1000);
+
+      // Botón redirección WhatsApp
+      const ctaBtn = document.getElementById('ctaBtn');
+      const whatsappURL = "https://wa.me/542236059508?text=Hola%2C%20quiero%20reclamar%20mi%20bono%20del%20100%25%20de%20Baireslot";
+
+      ctaBtn.addEventListener('click', function () {
+        fbq('track', 'Contact');
+        window.open(whatsappURL, '_blank');
+      });
+    });
+  </script>
+</body>
+</html>
